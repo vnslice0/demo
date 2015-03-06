@@ -1,4 +1,4 @@
-FromDevice0 :: FromDevice(eth2 , PROMISC true);
+FromDevice0 :: FromDevice(eth2, PROMISC true);
 FromDevice1 :: FromDevice(eth1, PROMISC true);
 ToDevice0 :: ToDevice(eth2);
 Queue0 :: Queue();
