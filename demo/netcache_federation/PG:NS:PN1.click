@@ -1,6 +1,6 @@
-FromDevice0 :: FromDevice(vlan378 , PROMISC true);
-FromDevice1 :: FromDevice(vlan385, PROMISC true);
-ToDevice0 :: ToDevice(vlan378);
+FromDevice0 :: FromDevice(vlan327, PROMISC true);
+FromDevice1 :: FromDevice(vlan309, PROMISC true);
+ToDevice0 :: ToDevice(vlan327);
 Queue0 :: Queue();
 Queue1 :: Queue();
 Classifier0 :: Classifier(12/0800, -);
@@ -15,7 +15,7 @@ IPClassifier0 :: IPClassifier(tcp, -);
 Queue2 :: Queue();
 NetCacheElement0 :: NetCacheElement(EGRESS);
 SetIPChecksum0 :: SetIPChecksum();
-ToDevice1 :: ToDevice(vlan385);
+ToDevice1 :: ToDevice(vlan309);
 Queue3 :: Queue();
 Queue4 :: Queue();
 Socket0 :: Socket(Udp, 10.1.1.1, 50000);
