@@ -12,7 +12,7 @@ Discard0 :: Discard();
 EtherSwitch0 :: EtherSwitch();
 FromSocket0 :: FromSocket(Udp, 0.0.0.0, 50000);
 FromSocket1 :: FromSocket(Udp, 0.0.0.0, 50001);
-KernelTap0 :: KernelTap(10.1.1.1/24, ETHER 12:58:6c:d0:77:85);
+KernelTap0 :: KernelTap(10.1.1.1/24, ETHER 12:0d:4e:d0:77:85);
 CheckIPHeader0 :: CheckIPHeader();
 IPClassifier0 :: IPClassifier(tcp, -);
 IPClassifier1 :: IPClassifier(dst port 50000 or 50001, -);
