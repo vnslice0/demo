@@ -1,0 +1,20 @@
+EtherSwitch0 :: EtherSwitch();
+FromDevice0 :: FromDevice(eth2, PROMISC true);
+FromDevice1 :: FromDevice(eth3, PROMISC true);
+ToDevice0 :: ToDevice(eth2);
+ToDevice1 :: ToDevice(eth3);
+Queue0 :: Queue();
+Queue1 :: Queue();
+FromDevice2 :: FromDevice(eth1, PROMISC true);
+ToDevice2 :: ToDevice(eth1);
+Queue2 :: Queue();
+
+EtherSwitch0 -> Queue0;
+EtherSwitch0[1] -> Queue1;
+Queue0 -> ToDevice0;
+Queue1 -> ToDevice1;
+FromDevice2 -> [2]EtherSwitch0;
+Queue2 -> ToDevice2;
+EtherSwitch0[2] -> Queue2;
+FromDevice0 -> EtherSwitch0;
+FromDevice1 -> [1]EtherSwitch0;

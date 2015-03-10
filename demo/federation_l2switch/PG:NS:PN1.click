@@ -1,0 +1,20 @@
+EtherSwitch0 :: EtherSwitch();
+FromDevice0 :: FromDevice(vlan327, PROMISC true);
+FromDevice1 :: FromDevice(vlan309, PROMISC true);
+ToDevice0 :: ToDevice(vlan327);
+ToDevice1 :: ToDevice(vlan309);
+Queue0 :: Queue();
+Queue1 :: Queue();
+FromDevice2 :: FromDevice(vlan332, PROMISC true);
+ToDevice2 :: ToDevice(vlan332);
+Queue2 :: Queue();
+
+EtherSwitch0 -> Queue0;
+EtherSwitch0[1] -> Queue1;
+Queue0 -> ToDevice0;
+Queue1 -> ToDevice1;
+FromDevice2 -> [2]EtherSwitch0;
+Queue2 -> ToDevice2;
+EtherSwitch0[2] -> Queue2;
+FromDevice0 -> EtherSwitch0;
+FromDevice1 -> [1]EtherSwitch0;
